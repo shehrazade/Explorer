@@ -1,0 +1,21 @@
+/************** Images Header******************/
+.masthead-bictoin{
+	    background-image: url(../img/bitcoin_header.jpg) !important;
+}
+
+/************** Backgroud Color ******************/
+.bg-bitcoin{
+
+	background:#004a7c !important;
+}
+
+/************** Separator Color******************/
+.hr-bitcoin{
+	border-color: #004a7c !important;
+}
+
+/************** Text Color ******************/
+.c-bitcoin{
+
+color: #004a7c !important; 
+}
