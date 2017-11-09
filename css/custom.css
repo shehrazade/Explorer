@@ -3,19 +3,23 @@
 	    background-image: url(../img/bitcoin_header.jpg) !important;
 }
 
-/************** Backgroud Color ******************/
+
+
+/************** Backgroud ******************/
 .bg-bitcoin{
 
-	background:#004a7c !important;
+	background:#ffae29 !important;
 }
 
 /************** Separator Color******************/
 .hr-bitcoin{
-	border-color: #004a7c !important;
+	border-color: #ffae29 !important;
 }
 
 /************** Text Color ******************/
 .c-bitcoin{
 
-color: #004a7c !important; 
+color: #ffae29 !important; 
 }
+
+/************** Sections Custom ******************/
