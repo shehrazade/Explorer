@@ -57,7 +57,6 @@
         </div>
       </div>
     </nav>
-
     <header class="masthead masthead-bictoin text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
@@ -75,9 +74,19 @@
     <section class="bg-bitcoin" id="currency">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
+          <div class="col-lg-12 mx-auto text-center">
             <h2 class="section-heading text-white">Currency</h2>
             <hr class="light my-4 hr-bitcoin">
+            <div class="row">
+                <div class="col-lg-4">
+                  <span class="text-faded mb-4"> Market Price :</span><br/>
+                  <input type="number" id="input_convert" min="0" placeholder="Enter a Value" />
+                  <select class="form-control" id="select_convert" onchange="getPrice(this)">
+                    <option selected="selected" value=""></option>
+                  </select> <br />
+                  <span class="text-faded mb-4 underline" id="convert_result"></span><span> BTC</span>
+                </div>
+            </div>
             <span class="text-faded mb-4"> 1 BTC =</span><span id="btc-value"></span><br/>
             <span class="text-faded mb-4"> Add Chart bitcoin evolution </span>
           </div>
@@ -92,7 +101,7 @@
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Blocks</h2>
             <hr class="my-4 hr-bitcoin">
-            <span class="text-faded mb-4 c-bitcoin" > Add card number of blocks existing</span>
+            <span class="text-faded mb-4 c-bitcoin" > Number of Blocks : </span><span class="text-faded mb-4 c-bitcoin" id="nb-blocks"></span>
             <span class="text-faded mb-4 c-bitcoin"> Table latest blocks </span>
           </div>
         </div>
@@ -106,7 +115,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">ABOUT</h2>
             <hr class="light my-4 hr-bitcoin">
-            <span class="text-faded mb-4"> Table latest blocks </span>
+            <span class="text-faded mb-4"> Table latest transactions </span>
           </div>
         </div>
       </div>
@@ -122,6 +131,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="../js/creative.min.js"></script>
+     <!-- Page Script -->
+    <script src="../js/bitcoin.js"></script>
 
   </body>
 

@@ -16,10 +16,13 @@
 	border-color: #ffae29 !important;
 }
 
-/************** Text Color ******************/
+/************** Text ******************/
 .c-bitcoin{
-
 color: #ffae29 !important; 
+}
+
+.underline{
+	text-decoration: underline !important;
 }
 
 /************** Sections Custom ******************/
