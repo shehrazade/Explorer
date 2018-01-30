@@ -51,44 +51,52 @@
               <a class="nav-link js-scroll-trigger" href="#transactions">Transactions</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Projects</a>
+              <a class="nav-link js-scroll-trigger" href="#addresses">Addresses</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <header class="masthead masthead-bictoin text-center text-white d-flex">
-      <div class="container my-auto">
+    </header>
+
+    <!-- SEARCH
+    <section id="blocks">
+      <div class="container">
         <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong> Bitcoin Explorer</strong>
-            </h1>
-            <h2 class="section-heading text-white">Add Search Toolbar </h2>
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Search</h2>
+            <hr class="my-4 hr-bitcoin">
+              SEARCH BAR
           </div>
         </div>
       </div>
-    </header>
-
+    </section>
+-->
     <!--  CURRENCY  -->
     <section class="bg-bitcoin" id="currency">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 mx-auto text-center">
+          <div class="col-lg-8 mx-auto text-center">
             <h2 class="section-heading text-white">Currency</h2>
-            <hr class="light my-4 hr-bitcoin">
+            <hr class="light my-4"> <br/>
             <div class="row">
-                <div class="col-lg-4">
-                  <span class="text-faded mb-4"> Market Price :</span><br/>
-                  <input type="number" id="input_convert" min="0" placeholder="Enter a Value" />
+              <div class="col-lg-3">
+                <span class="text-white mb-3"> Bitcoin Converter : </span>
+              </div>
+                <div class="col-lg-3">
+                  <input class="form-control" type="number" id="input_convert" min="0" placeholder="Enter a Value" />
+                </div>
+                <div class="col-lg-3">
                   <select class="form-control" id="select_convert" onchange="getPrice(this)">
                     <option selected="selected" value=""></option>
-                  </select> <br />
-                  <span class="text-faded mb-4 underline" id="convert_result"></span><span> BTC</span>
+                  </select>
+                </div>
+                <div class="col-lg-3">
+                <span class="text-white mb-4" id="convert_result"></span><span class="text-white mb-4"> BTC</span>
                 </div>
             </div>
-            <span class="text-faded mb-4"> 1 BTC =</span><span id="btc-value"></span><br/>
-            <span class="text-faded mb-4"> Add Chart bitcoin evolution </span>
+            </div>
           </div>
         </div>
       </div>
@@ -98,28 +106,99 @@
     <section id="blocks">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Blocks</h2>
+          <div class="col-lg-12">
+            <h2 class="section-heading text-center">Blocks</h2>
             <hr class="my-4 hr-bitcoin">
-            <span class="text-faded mb-4 c-bitcoin" > Number of Blocks : </span><span class="text-faded mb-4 c-bitcoin" id="nb-blocks"></span>
-            <span class="text-faded mb-4 c-bitcoin"> Table latest blocks </span>
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="row">
+    								<div class="col-md-12">
+    									<div class="form-group">
+    										<button type="button" class="btn btn-warning" onclick="get_last_info();"> Last Block </button>
+    									</div>
+    								</div>
+                 </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control input-block-height" placeholder="Block Height or Hash" id="block_hash">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-warning" onclick="get_block_info()"> Go </button>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="row hidden" id="result_blocks">
+                    <h3>Result</h3></br>
+                    <div class="col-md-12" id="last_result"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- TRANSACTION  -->
     <section class="bg-bitcoin" id="transactions">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">ABOUT</h2>
-            <hr class="light my-4 hr-bitcoin">
-            <span class="text-faded mb-4"> Table latest transactions </span>
+          <div class="col-lg-12">
+            <h2 class="section-heading text-white text-center">Transactions</h2>
+            <hr class="light my-4">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control input-block-height" placeholder="Transaction Hash" id="transaction_hash">
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-default" onclick="get_transaction_info()"> Go </button>
+                    </div>
+              </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="row hidden text-white" id="transaction">
+                    <h3>Result</h3></br>
+                    <div class="col-md-12" id="transaction_result"></div>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ADDRESSES    -->
+     <section id="addresses">
+       <div class="container">
+         <div class="row">
+           <div class="col-lg-12">
+             <h2 class="section-heading text-center">Addresses</h2>
+             <hr class="my-4 hr-bitcoin">
+             <div class="row">
+               <div class="col-lg-7">
+                 <div class="row">
+                     <div class="col-md-8">
+                         <input type="text" class="form-control input-block-height" placeholder="Address Hash" id="address_hash">
+                     </div>
+                     <div class="col-md-4">
+                         <button type="button" class="btn btn-default" onclick="get_address_info()"> Go </button>
+                     </div>
+               </div>
+               </div>
+               <div class="col-lg-5">
+                 <div class="row hidden" id="address">
+                     <h3>Result</h3></br>
+                     <div class="col-md-12" id="address_result"></div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
